@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors')
-const User = require('./User.js');0
+const Clients = require('./Clients.js');0
 
 const corsOptions = {
     origin: 'https://notify-u-frontend.vercel.app',
@@ -23,13 +23,13 @@ mongoose.connect(mongoURI)
 app.post('/register', async (req, res) => {
     const { name, contact } = req.body;
     try {
-        const user = await User.findOne({contact});
+        const user = await Clients.findOne({contact});
         if(user)
         {
             return res.status(400).json({message: 'User already exists'});
         }
         if(contact.length == 10){
-            const newUser = new User({ name, contact });
+            const newUser = new Clients({ name, contact });
             await newUser.save();
             return res.status(200).json({ message: 'Registered successfully!' });
         }

@@ -6,5 +6,5 @@ const UserSchema = new Schema({
     contact:{type:String}
 })
 
-const User = mongoose.model('User', UserSchema);
-module.exports = User;
+const Clients = mongoose.model('Clients', UserSchema);
+module.exports = Clients;
