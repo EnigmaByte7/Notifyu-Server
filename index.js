@@ -5,7 +5,7 @@ const cors = require('cors')
 const User = require('./User.js');0
 
 const corsOptions = {
-    origin: '*',
+    origin: 'https://notify-u-frontend.vercel.app',
     methods: ['GET','POST'],
     allowedHeaders: ['Content-Type','Authorization'],
     optionsSuccessStatus: 200
@@ -13,8 +13,7 @@ const corsOptions = {
 app.options('*', cors(corsOptions));
 
 app.use(cors(corsOptions));
-
-
+app.use(express.json());
 
 const mongoURI = `mongodb+srv://saxenay117:mongoDB2024%23@cluster1.unzxb3t.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1`;
 mongoose.connect(mongoURI)
