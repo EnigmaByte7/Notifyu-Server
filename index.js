@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors')
-const Clients = require('./Clients.js');0
+const Clients = require('./Clients.js');
 
 const corsOptions = {
     origin: 'https://notify-u-frontend.vercel.app',
