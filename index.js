@@ -42,6 +42,11 @@ app.post('/register', async (req, res) => {
     }
 });
 
+app.get('/getdata',(req,res)=>{
+    const data = Clients.find();
+    res.send(data);
+})
+
 app.get('/',(req,res)=>{
     res.send('Online !');
 })
