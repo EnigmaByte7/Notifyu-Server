@@ -42,8 +42,8 @@ app.post('/register', async (req, res) => {
     }
 });
 
-app.get('/getdata',(req,res)=>{
-    const data = Clients.find();
+app.get('/getdata',async (req,res)=>{
+    const data = await Clients.find();
     res.send(data);
 })
 
